@@ -1,5 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    views.py                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/06 16:27:52 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/02/06 16:27:52 by VadTheZombi      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 from django.shortcuts import render
-from .models import Letting, Profile
+from letting.models import Letting
+from user_profile.models import Profile
 
 
 

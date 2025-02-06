@@ -1,22 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    admin.py                                           :+:      :+:    :+:    #
+#    models.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/06 16:27:56 by VadTheZombi       #+#    #+#              #
-#    Updated: 2025/02/06 16:27:56 by VadTheZombi      ###   ########.fr        #
+#    Created: 2025/02/06 16:28:00 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/02/06 16:28:00 by VadTheZombi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-from django.contrib import admin
+from django.db import models
+from django.contrib.auth.models import User
+# Create your models here.
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    favorite_city = models.CharField(max_length=64, blank=True)
 
-from letting.models import Letting
-from letting.models import Address
-from user_profile.models import Profile
-
-
-admin.site.register(Letting)
-admin.site.register(Address)
-admin.site.register(Profile)
+    def __str__(self):
+        return self.user.username

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    settings.py                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/06 16:27:47 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/02/06 16:27:47 by VadTheZombi      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 import os
 
 from pathlib import Path
@@ -28,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user_profile',
+    'letting',
 ]
 
 MIDDLEWARE = [
