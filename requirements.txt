@@ -2,6 +2,7 @@ django==3.0
 flake8==3.7.0
 pytest-django==3.9.0
 pytest-cov==2.6.0
-pytest==4.0.0
 black==19.10b0
 coverage
+pluggy==0.13.0
+pytest==5.3.5
