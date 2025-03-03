@@ -17,7 +17,7 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 # Create your models here.
 class Address(models.Model):
     """
-    Represents an address with a number, street, city, state, zip code, and country ISO code.
+    Represents an address with a number, street, city, state...
     """
 
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
