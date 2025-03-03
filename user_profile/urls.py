@@ -1,31 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    admin.py                                           :+:      :+:    :+:    #
+#    urls.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/13 19:50:46 by VadTheZombi       #+#    #+#              #
-#    Updated: 2025/02/13 19:50:46 by VadTheZombi      ###   ########.fr        #
+#    Created: 2025/03/03 07:25:22 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/03/03 07:25:22 by VadTheZombi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-from django.contrib import admin
-from .models import Address, Letting
+from django.urls import path
+from . import views
 
-
-@admin.register(Address)
-class AddressAdmin(admin.ModelAdmin):
-    list_display = (
-        "number",
-        "street",
-        "city",
-        "state",
-        "zip_code",
-        "country_iso_code",
-    )
-
-
-@admin.register(Letting)
-class LettingAdmin(admin.ModelAdmin):
-    list_display = ("title", "address")
+urlpatterns = [
+    path("", views.profiles_index, name="profiles_index"),
+    path("<str:username>/", views.profile, name="profile"),
+]

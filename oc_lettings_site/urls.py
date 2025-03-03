@@ -1,14 +1,25 @@
-from django.contrib import admin
-from django.urls import path
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    urls.py                                            :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/03/03 07:25:27 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/03/03 07:25:27 by VadTheZombi      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-from . import views
+from django.contrib import admin
+from django.urls import path, include
+from . import views  # Import correct des vues locales
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("lettings/", views.lettings_index, name="lettings_index"),
-    path("lettings/<int:letting_id>/", views.letting, name="letting"),
-    path("profiles/", views.profiles_index, name="profiles_index"),
-    path("profiles/<str:username>/", views.profile, name="profile"),
+    path("", views.index, name="index"),  # Vue principale pour la page d'accueil
+    path("lettings/", include("letting.urls")),  # Inclusion des URLs de l'app letting
+    path(
+        "profiles/", include("user_profile.urls")
+    ),  # Inclusion des URLs de user_profile
     path("admin/", admin.site.urls),
 ]
 

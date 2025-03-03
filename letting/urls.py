@@ -1,22 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    admin.py                                           :+:      :+:    :+:    #
+#    urls.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: VadTheZombie <vadim.intra@inbox.ru>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/06 16:27:56 by VadTheZombi       #+#    #+#              #
-#    Updated: 2025/02/06 16:27:56 by VadTheZombi      ###   ########.fr        #
+#    Created: 2025/03/03 07:25:30 by VadTheZombi       #+#    #+#              #
+#    Updated: 2025/03/03 07:25:30 by VadTheZombi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-from django.contrib import admin
+from django.urls import path
+from . import views
 
-from letting.models import Letting
-from letting.models import Address
-from user_profile.models import Profile
-
-
-admin.site.register(Letting)
-admin.site.register(Address)
-admin.site.register(Profile)
+urlpatterns = [
+    path("", views.lettings_index, name="lettings_index"),
+    path("<int:letting_id>/", views.letting, name="letting"),
+]

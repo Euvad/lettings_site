@@ -13,7 +13,6 @@
 import os
 from pathlib import Path
 import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -25,7 +24,7 @@ SENTRY_DSN = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     send_default_pii=True,
-    traces_sample_rate=1.0,
+    traces_sample_rate=0.05,  # regarder la doc pour comprendre
     _experiments={
         "continuous_profiling_auto_start": True,
     },
@@ -41,7 +40,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -90,12 +89,24 @@ WSGI_APPLICATION = "oc_lettings_site.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "oc-lettings-site.sqlite3"),
+
+# Détection de l'environnement
+ENVIRONMENT = os.getenv("DJANGO_ENV", "development")
+
+if ENVIRONMENT == "test":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ":memory:",  # Base en mémoire pour éviter toute suppression des tables
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "oc-lettings-site.sqlite3"),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -144,14 +155,14 @@ LOGGING = {
             "class": "sentry_sdk.integrations.logging.EventHandler",
         },
         "console": {
-            "level": "DEBUG",
+            "level": "INFO",
             "class": "logging.StreamHandler",
         },
     },
     "loggers": {
         "django": {
             "handlers": ["console", "sentry"],
-            "level": "DEBUG",
+            "level": "INFO",
             "propagate": True,
         },
         # You can define other loggers for your applications as needed
