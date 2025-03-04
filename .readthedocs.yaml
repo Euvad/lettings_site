@@ -1,0 +1,35 @@
+# .readthedocs.yaml
+
+version: 2
+
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+
+# Optionally, you can specify the Python version and additional dependencies
+python:
+  version: 3.11
+  install:
+    - requirements: requirements.txt
+
+# Build settings
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.11"
+
+# Optionally, you can specify additional build steps
+# For example, if you need to run migrations or other commands before building the docs
+commands:
+  - echo "Running additional build steps"
+  # Add any additional commands you need here
+
+# Optionally, you can specify environment variables
+# For example, if you need to set the DJANGO_SETTINGS_MODULE environment variable
+environment:
+  DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
+
+# Optionally, you can specify additional settings for the build process
+# For example, if you need to specify a custom build image
+# build:
+#   image: latest
