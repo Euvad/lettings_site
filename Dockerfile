@@ -9,7 +9,8 @@ COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-
+# Collecter les fichiers statiques AVANT de démarrer le serveur
+RUN python manage.py collectstatic --noinput
 # Copy the rest of the application code into the container
 COPY . .
 
