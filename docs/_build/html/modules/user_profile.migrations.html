@@ -50,7 +50,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">user_profile.migrations package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-user_profile.migrations.0001_initial">user_profile.migrations.0001_initial module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-user_profile.migrations.0002_forced_migration">user_profile.migrations.0002_forced_migration module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-profile-migrations-0002-forced-migration-module">user_profile.migrations.0002_forced_migration module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-user_profile.migrations">Module contents</a></li>
 </ul>
 </li>
@@ -127,7 +127,7 @@ Migrations.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_profile.migrations.0001_initial.Migration.dependencies">
-<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('oc_lettings_site',</span> <span class="pre">'0002_transfert_model_lettings')]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.dependencies" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__')]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.dependencies" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -145,7 +145,7 @@ default and return a mutated state from a copy.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_profile.migrations.0001_initial.Migration.operations">
-<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;SeparateDatabaseAndState</span>&#160; <span class="pre">state_operations=[&lt;CreateModel</span>&#160; <span class="pre">name='Address',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('number',</span> <span class="pre">&lt;django.db.models.fields.PositiveIntegerField&gt;),</span> <span class="pre">('street',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('city',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('state',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('zip_code',</span> <span class="pre">&lt;django.db.models.fields.PositiveIntegerField&gt;),</span> <span class="pre">('country_iso_code',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'lettings_address',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'Addresses'},</span> <span class="pre">bases=(&lt;class</span> <span class="pre">'django.db.models.base.Model'&gt;,)&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Letting',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('address',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'lettings_letting'},</span> <span class="pre">bases=(&lt;class</span> <span class="pre">'django.db.models.base.Model'&gt;,)&gt;]&gt;]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.operations" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Profile',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('favorite_city',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('user',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.operations" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -156,11 +156,6 @@ default and return a mutated state from a copy.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="user_profile.migrations.0001_initial.Migration.run_before">
 <span class="sig-name descname"><span class="pre">run_before</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.run_before" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0001_initial.Migration.state_operations">
-<span class="sig-name descname"><span class="pre">state_operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Address',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('number',</span> <span class="pre">&lt;django.db.models.fields.PositiveIntegerField&gt;),</span> <span class="pre">('street',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('city',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('state',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('zip_code',</span> <span class="pre">&lt;django.db.models.fields.PositiveIntegerField&gt;),</span> <span class="pre">('country_iso_code',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'lettings_address',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'Addresses'},</span> <span class="pre">bases=(&lt;class</span> <span class="pre">'django.db.models.base.Model'&gt;,)&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Letting',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('address',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'lettings_letting'},</span> <span class="pre">bases=(&lt;class</span> <span class="pre">'django.db.models.base.Model'&gt;,)&gt;]</span></em><a class="headerlink" href="#user_profile.migrations.0001_initial.Migration.state_operations" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -181,82 +176,8 @@ recorded in step 1.</p></li>
 </dd></dl>
 
 </section>
-<section id="module-user_profile.migrations.0002_forced_migration">
-<span id="user-profile-migrations-0002-forced-migration-module"></span><h2>user_profile.migrations.0002_forced_migration module<a class="headerlink" href="#module-user_profile.migrations.0002_forced_migration" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_profile.migrations.0002_forced_migration.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_profile/migrations/0002_forced_migration.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/django/db/migrations/migration.html#Migration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.__init__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_editor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_sql</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/django/db/migrations/migration.html#Migration.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.apply" title="Link to this definition"></a></dt>
-<dd><p>Take a project_state representing all migrations prior to this one
-and a schema_editor for a live database and apply the migration
-in a forwards order.</p>
-<p>Return the resulting project state for efficient reuse by following
-Migrations.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.atomic">
-<span class="sig-name descname"><span class="pre">atomic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.atomic" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.dependencies">
-<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('user_profile',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.dependencies" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.initial">
-<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.initial" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.mutate_state">
-<span class="sig-name descname"><span class="pre">mutate_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/django/db/migrations/migration.html#Migration.mutate_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.mutate_state" title="Link to this definition"></a></dt>
-<dd><p>Take a ProjectState and return a new one with the migration’s
-operations applied to it. Preserve the original object state by
-default and return a mutated state from a copy.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.operations">
-<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterModelOptions</span>&#160; <span class="pre">name='profile',</span> <span class="pre">options={}&gt;,</span> <span class="pre">&lt;AlterModelTable</span>&#160; <span class="pre">name='profile',</span> <span class="pre">table=None&gt;]</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.operations" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.replaces">
-<span class="sig-name descname"><span class="pre">replaces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.replaces" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.run_before">
-<span class="sig-name descname"><span class="pre">run_before</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.run_before" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="user_profile.migrations.0002_forced_migration.Migration.unapply">
-<span class="sig-name descname"><span class="pre">unapply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_editor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_sql</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/django/db/migrations/migration.html#Migration.unapply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_profile.migrations.0002_forced_migration.Migration.unapply" title="Link to this definition"></a></dt>
-<dd><p>Take a project_state representing all migrations prior to this one
-and a schema_editor for a live database and apply the migration
-in a reverse order.</p>
-<p>The backwards migration process consists of two phases:</p>
-<ol class="arabic simple">
-<li><p>The intermediate states from right before the first until right
-after the last operation inside this migration are preserved.</p></li>
-<li><p>The operations are applied in reverse order using the states
-recorded in step 1.</p></li>
-</ol>
-</dd></dl>
-
-</dd></dl>
-
+<section id="user-profile-migrations-0002-forced-migration-module">
+<h2>user_profile.migrations.0002_forced_migration module<a class="headerlink" href="#user-profile-migrations-0002-forced-migration-module" title="Link to this heading"></a></h2>
 </section>
 <section id="module-user_profile.migrations">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-user_profile.migrations" title="Link to this heading"></a></h2>
